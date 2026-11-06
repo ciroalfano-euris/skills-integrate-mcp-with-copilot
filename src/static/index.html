@@ -8,6 +8,28 @@
   </head>
   <body>
     <header>
+      <div class="account-controls">
+        <button id="account-button" type="button" aria-expanded="false" aria-controls="account-panel">
+          👤 Account
+        </button>
+        <div id="account-panel" class="account-panel hidden">
+          <form id="login-form">
+            <div class="form-group">
+              <label for="teacher-username">Teacher username:</label>
+              <input id="teacher-username" name="username" autocomplete="username" required />
+            </div>
+            <div class="form-group">
+              <label for="teacher-password">Password:</label>
+              <input id="teacher-password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <button type="submit">Log in</button>
+          </form>
+          <div id="teacher-session" class="hidden">
+            <p>Signed in as a teacher.</p>
+            <button id="logout-button" type="button">Log out</button>
+          </div>
+        </div>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
@@ -21,7 +43,7 @@
         </div>
       </section>
 
-      <section id="signup-container">
+      <section id="signup-container" class="hidden">
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
@@ -37,9 +59,10 @@
           </div>
           <button type="submit">Sign Up</button>
         </form>
-        <div id="message" class="hidden"></div>
       </section>
     </main>
+
+    <div id="message" class="hidden" role="status" aria-live="polite"></div>
 
     <footer>
       <p>&copy; 2026 Mergington High School</p>
